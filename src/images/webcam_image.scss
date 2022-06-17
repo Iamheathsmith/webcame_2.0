@@ -1,4 +1,8 @@
-.webcam-image {
+.webcam-image, .live-image {
+  > iframe, > img {
+    outline: 1px solid;
+  }
+
   &__title {
     margin: .2rem 0;
   }

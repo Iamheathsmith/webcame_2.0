@@ -2,7 +2,7 @@
   margin: 0 auto;
   width: 90%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: .5rem;
   justify-content: center;
@@ -16,23 +16,85 @@
     text-transform: capitalize;
   }
 
+
+  &__top-section {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+
+  // Iphone size
   @media only screen and (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      font-size: 1.2rem;
+    }
+
+    &__top-section {
       display: flex;
       flex-direction: column;
-      &__title {
-        font-size: 1.2rem;
-      }
+      row-gap: 0.5rem;
+    }
 
-      img, iframe {
+    .webcam-image {
+      > img, > iframe {
         width: 100%
       }
+    }
   }
 
-  @media only screen and (min-width: 600px) {
-      img, iframe {
+  // ipad min
+  @media only screen and (min-width: 700px) {
+    .webcam-image {
+      > img {
+        height: 200px;
+      }
+    }
+  }
+
+  // ipad air
+  @media only screen and (min-width: 800px) {
+    &__top-section {
+      display: flex;
+      flex-direction: row;
+      row-gap: 0.5rem;
+    }
+
+    .webcam-image {
+      > img {
+        height: 250px;
+        aspect-ratio: auto;
+      }
+
+    }
+
+    .live-image {
+      iframe {
+        width: 440px;
+        aspect-ratio: auto;
+        height: 250px;
+      }
+    }
+  }
+
+  // web broswer
+  @media only screen and (min-width: 900px) {
+    .webcam-image {
+      > img {
         height: 300px;
-        width: 100%
+        aspect-ratio: auto;
       }
-  }
+    }
 
+    .live-image {
+      iframe {
+        width: 530px;
+        aspect-ratio: auto;
+        height: 300px;
+      }
+    }
+  }
 }

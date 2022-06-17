@@ -23,6 +23,7 @@ import {
 import { SingleWebCam } from './views/single_web_cam';
 
 import './app.scss';
+import { NavBar } from './nav_bar';
 
 const ROOT_URL_FOR_GITHUB_PAGES = 'webcame_2.0';
 
@@ -54,19 +55,7 @@ function App() {
 	return (
 		<Router basename={`/${ROOT_URL_FOR_GITHUB_PAGES}`}>
 			<div>
-				<nav>
-					<ul>
-						<li>
-							<Link to='/'>Home</Link>
-						</li>
-						<li>
-							<Link to='/live'>Live images</Link>
-						</li>
-						<li>
-							<Link to='/about'>About</Link>
-						</li>
-					</ul>
-				</nav>
+				<NavBar />
 
 				{/* <header className='app-header'>For Tim</header> */}
 

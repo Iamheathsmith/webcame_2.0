@@ -9,7 +9,7 @@ export const WebCameImage = ({ imageData, showHeader = true }: { imageData: WebC
 	return (
 		<div className='webcam-image'>
 			{showHeader && <h3 className='webcam-image__title'>{imageData.title}</h3>}
-			<img className='webcam-image__image' src={image} alt='logo' />
+			<img className='webcam-image__still-image' src={image} alt='logo' />
 		</div>
 	);
 };

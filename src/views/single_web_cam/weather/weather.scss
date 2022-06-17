@@ -1,0 +1,33 @@
+.weather-info {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 2rem;
+
+  .temp {
+    &-current {
+      margin-bottom: .5rem;
+    }
+
+    &-high {
+      color: red;
+      font-weight: 600;
+      margin-right: .3rem;
+    }
+
+    &-low {
+      color: blue;
+      font-weight: 600;
+      margin-left: .3rem;
+    }
+  }
+
+  h4 {
+    text-transform: capitalize;
+    margin-bottom: .5rem;
+    margin-top: 0;
+  }
+
+  img {
+    height: 5rem;
+  }
+}
