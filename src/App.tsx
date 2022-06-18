@@ -2,11 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { WebCam } from './types/web_cam_type';
 
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { Home } from './views/home/home';
-import { About } from './views/about';
-import { LiveWebCams } from './views/live_views';
 import { fetchMultiWebcam } from './api_calls/windy_api';
 import {
 	florence101Id,
@@ -24,6 +22,9 @@ import { SingleWebCam } from './views/single_web_cam';
 
 import './app.scss';
 import { NavBar } from './nav_bar';
+import { CoastCams } from './views/coast_cams';
+import { MountainCams } from './views/mountain_cams';
+import { InlandCams } from './views/inland_cams';
 
 const ROOT_URL_FOR_GITHUB_PAGES = 'webcame_2.0';
 
@@ -61,8 +62,9 @@ function App() {
 
 				<Routes>
 					<Route path='/' element={<Home images={images} />} />
-					<Route path='/live' element={<LiveWebCams images={images} />} />
-					<Route path='/about' element={<About />} />
+					<Route path='/coast_cams' element={<CoastCams />} />
+					<Route path='/mountain_cams' element={<MountainCams />} />
+					<Route path='/inland_cams' element={<InlandCams />} />
 					<Route path='/web_cam/:id' element={<SingleWebCam />} />
 				</Routes>
 			</div>

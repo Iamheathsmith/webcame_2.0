@@ -12,10 +12,13 @@ export const NavBar = () => {
 					<Link to='/'>Home</Link>
 				</li>
 				<li>
-					<Link to='/live'>Live images</Link>
+					<Link to='/coast_cams'>Coast Cams</Link>
 				</li>
 				<li>
-					<Link to='/about'>About</Link>
+					<Link to='/mountain_cams'>Mountain Cams</Link>
+				</li>
+				<li>
+					<Link to='/inland_cams'>Inland Cams</Link>
 				</li>
 			</ul>
 		</nav>
