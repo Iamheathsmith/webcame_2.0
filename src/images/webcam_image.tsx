@@ -3,7 +3,6 @@ import { WebCam } from '../types/web_cam_type';
 import './webcam_image.scss';
 
 export const WebCameImage = ({ imageData, showHeader = true }: { imageData: WebCam; showHeader?: boolean }) => {
-	console.log('imageData: ', imageData);
 	const image = imageData.image.current.preview;
 
 	return (
