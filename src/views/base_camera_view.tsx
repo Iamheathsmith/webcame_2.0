@@ -4,14 +4,14 @@ import { IndexedCameras } from '../redux/cams_slice';
 
 export const BaseCameraView = ({ cameras }: { cameras: IndexedCameras }) => {
 	return (
-		<div className='home__images'>
+		<>
 			{Object.values(cameras)?.map((image) => {
 				return (
-					<Link key={image.id} className='home__images-link' to={`/web_cam/${image.id}`} state={{ image: image }}>
+					<Link key={image.id} className='home__images-link' to={`/web_cam/${image.id}`}>
 						<WebCameImage key={image.id} imageData={image} />
 					</Link>
 				);
 			})}
-		</div>
+		</>
 	);
 };

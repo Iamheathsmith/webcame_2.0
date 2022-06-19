@@ -1,3 +1,4 @@
+//coast
 export const florence101Id = '1642626699';
 export const BayshoreNewportId = '1640019952';
 export const pacificCityId = '1650489099';
@@ -7,6 +8,7 @@ export const lincolnCityId = '1387734002';
 export const brandonWestId = '1598894604';
 export const bayCityEastId = '1616692567';
 export const barviewJettyLookoutId = '1618434689';
+export const cushmanId = '1459339374';
 
 //inland
 export const butlerHillId = '1532553179';
@@ -32,13 +34,12 @@ export const ore140AtWarnerMtnSummitId = '1307304454';
 export const ore58AtWillamettePassEastId = '1386117599';
 export const ore58AtWillamettePassWestId = '1479331048';
 export const us101AtBrookkingsId = '1357284022';
-
-//hwy126
 export const ORE126AtWaltonCougarBadgerPassEastId = '1522271683';
 export const ORE126AtWaltonCougarBadgerPassWestId = '1522271686';
-export const cushmanId = '1459339374';
 
-export const hwy126CameraIds = [ORE126AtWaltonCougarBadgerPassEastId, ORE126AtWaltonCougarBadgerPassWestId, cushmanId];
+const kenmoreId = '1459259852';
+//Home page
+export const homePageIds = [florence101Id, kenmoreId, us26atZigZagId, narragansettBeachId];
 
 export const coastCameraIds = [
 	florence101Id,

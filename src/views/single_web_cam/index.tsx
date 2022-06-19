@@ -1,15 +1,39 @@
-import { useLocation } from 'react-router-dom';
 import { LiveWebCameImage } from '../../images/live_image';
 import { WebCameImage } from '../../images/webcam_image';
-import { WebCam } from '../../types/web_cam_type';
 import { WeatherInfo } from './weather';
 
 import './single_web_cam.scss';
+import { useParams } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllCams, setAllCams } from '../../redux/cams_slice';
+import { useCallback, useEffect, useState } from 'react';
+import { getCameraDataAndIndexById } from '../../helpers';
 
 export const SingleWebCam = () => {
-	const location = useLocation();
+	const { id } = useParams();
+	const dispatch = useDispatch();
+	const [fetchComplete, setFetchComplete] = useState(false);
 
-	const { image } = location.state as { image: WebCam };
+	const allCameras = useSelector(getAllCams);
+
+	const image = id ? allCameras?.[id] : undefined;
+
+	const getWebcams = useCallback(async () => {
+		setFetchComplete(true);
+		const webCams = await getCameraDataAndIndexById([id as string]);
+
+		dispatch(setAllCams(webCams));
+	}, [dispatch, id]);
+
+	useEffect(() => {
+		if (!image && !fetchComplete) {
+			getWebcams();
+		}
+	}, [fetchComplete, getWebcams, image]);
+
+	if (!image) {
+		return null;
+	}
 
 	return (
 		<div className='single-cam'>

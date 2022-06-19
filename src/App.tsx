@@ -31,19 +31,17 @@ const ROOT_URL_FOR_GITHUB_PAGES = 'webcame_2.0';
 function App() {
 	return (
 		<Router basename={`/${ROOT_URL_FOR_GITHUB_PAGES}`}>
-			<div>
-				<NavBar />
+			<NavBar />
 
-				{/* <header className='app-header'>For Tim</header> */}
+			{/* <header className='app-header'>For Tim</header> */}
 
-				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/coast_cams' element={<CoastCams />} />
-					<Route path='/mountain_cams' element={<MountainCams />} />
-					<Route path='/inland_cams' element={<InlandCams />} />
-					<Route path='/web_cam/:id' element={<SingleWebCam />} />
-				</Routes>
-			</div>
+			<Routes>
+				<Route path='/' element={<Home />} />
+				<Route path='/coast_cams' element={<CoastCams />} />
+				<Route path='/mountain_cams' element={<MountainCams />} />
+				<Route path='/inland_cams' element={<InlandCams />} />
+				<Route path='/web_cam/:id' element={<SingleWebCam />} />
+			</Routes>
 		</Router>
 	);
 }

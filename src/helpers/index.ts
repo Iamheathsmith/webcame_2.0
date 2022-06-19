@@ -12,3 +12,11 @@ export const getCameraDataAndIndexById = async (cameraIds: Array<string>) => {
 	const cameraData = await fetchMultiWebcam(cameraIds);
 	return camsIndexById(cameraData);
 };
+
+export const getWindowDimensions = () => {
+	const { innerWidth: width, innerHeight: height } = window;
+	return {
+		width,
+		height,
+	};
+};

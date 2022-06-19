@@ -15,8 +15,6 @@ export const WeatherInfo = ({ lat, long }: { lat: string; long: string }) => {
 		return null;
 	}
 
-	console.log('weather: ', weatherData);
-
 	return (
 		<div className='weather-info'>
 			<div>
@@ -31,10 +29,7 @@ export const WeatherInfo = ({ lat, long }: { lat: string; long: string }) => {
 
 			<div>
 				<h4>{weatherData.weather[0].description}</h4>
-				<img
-					src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
-					alt={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
-				/>
+				<img src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt={`weather`} />
 			</div>
 		</div>
 	);

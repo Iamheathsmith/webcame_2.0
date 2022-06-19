@@ -25,7 +25,6 @@ export const MountainCams = () => {
 	if (!mountainCams) {
 		return null;
 	}
-	console.log('mountainCams: ', mountainCams);
 
 	return (
 		<div className='home__images'>

@@ -16,6 +16,6 @@
 }
 
 body {
-  height: 100%;
-  background-color: aliceblue;
+  min-height: 100vh;
+  background-image: linear-gradient( 135deg, #cce6f9 10%, #5eb8f8 100%);
 }

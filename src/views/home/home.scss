@@ -1,7 +1,8 @@
 .home__images {
   margin: 0 auto;
-  padding: 1rem 2rem;
   display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 2rem;
@@ -14,5 +15,11 @@
 
   .webcam-image {
     width: 400px !important;
+  }
+
+  @media only screen and (max-width: 400px) {
+    .webcam-image {
+      width: 360px !important
+    }
   }
 }

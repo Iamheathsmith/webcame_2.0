@@ -1,24 +1,41 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { getWindowDimensions } from '../helpers';
+
+import cameraLogo from '../assets/camera-icon-21.png';
+
 import './nav_bar.scss';
 
 export const NavBar = () => {
+	const { width } = getWindowDimensions();
+
+	const showText = width > 400;
+
+	const CamLink = ({ text, to }: { text: string; to: string }) => {
+		return (
+			<NavLink className={({ isActive }) => (isActive ? 'active' : '')} to={to}>
+				{text}
+			</NavLink>
+		);
+	};
+
 	return (
 		<nav className='nav-bar'>
 			<Link className='web-site-name' to='/'>
-				Web Cams For You
+				<img className='web-site-name--logo' src={cameraLogo} alt='logo' />
+				{showText && 'Web cams for you!'}
 			</Link>
 			<ul>
 				<li>
-					<Link to='/'>Home</Link>
+					<CamLink to='/' text='Home' />
 				</li>
 				<li>
-					<Link to='/coast_cams'>Coast Cams</Link>
+					<CamLink to='/coast_cams' text='Coast' />
 				</li>
 				<li>
-					<Link to='/mountain_cams'>Mountain Cams</Link>
+					<CamLink to='/mountain_cams' text='Mountain' />
 				</li>
 				<li>
-					<Link to='/inland_cams'>Inland Cams</Link>
+					<CamLink to='/inland_cams' text='Inland' />
 				</li>
 			</ul>
 		</nav>
