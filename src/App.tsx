@@ -29,30 +29,6 @@ import { InlandCams } from './views/inland_cams';
 const ROOT_URL_FOR_GITHUB_PAGES = 'webcame_2.0';
 
 function App() {
-	const [images, setImages] = useState<Array<WebCam>>([]);
-
-	const getWebcams = async () => {
-		const boom = await fetchMultiWebcam([
-			florence101Id,
-			BayshoreNewportId,
-			pacificCityId,
-			narragansettBeachId,
-			yaquinaBayJettyId,
-			lincolnCityId,
-			cushmanId,
-			brandonWestId,
-			bayCityEastId,
-			barviewJettyLookoutId,
-		]);
-		setImages(boom);
-	};
-
-	useEffect(() => {
-		if (!images.length) {
-			getWebcams();
-		}
-	}, [images]);
-
 	return (
 		<Router basename={`/${ROOT_URL_FOR_GITHUB_PAGES}`}>
 			<div>
@@ -61,7 +37,7 @@ function App() {
 				{/* <header className='app-header'>For Tim</header> */}
 
 				<Routes>
-					<Route path='/' element={<Home images={images} />} />
+					<Route path='/' element={<Home />} />
 					<Route path='/coast_cams' element={<CoastCams />} />
 					<Route path='/mountain_cams' element={<MountainCams />} />
 					<Route path='/inland_cams' element={<InlandCams />} />
